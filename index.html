@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>地球の氷河期 - 包括的な氷期・間氷期サイクルの理解</title>
+    <!-- Tailwind CSSの読み込み -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 外部CSSファイルの読み込み -->
+    <link rel="stylesheet" href="css/enhanced-style.css">
+    <meta name="description" content="地球の氷河期について包括的に学ぶ教育サイト。大氷河期、氷期・間氷期サイクル、ミランコビッチ理論を詳細なグラフと共に解説。">
+    <meta name="keywords" content="氷河期,氷期,間氷期,ミランコビッチ,気候変動,地球科学">
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- ヘッダー -->
+    <header class="bg-gradient-to-r from-blue-900 to-blue-600 text-white py-8">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl md:text-5xl font-bold text-center mb-2">地球の氷河期</h1>
+            <p class="text-xl md:text-2xl text-center text-blue-200">包括的な氷期・間氷期サイクルの科学的理解</p>
+            <p class="text-lg text-center mt-2 text-blue-100">大氷河期から現在まで - 詳細なグラフで見る地球の気候史</p>
+        </div>
+    </header>
+
+    <!-- ナビゲーション -->
+    <nav class="bg-blue-800 text-white py-3 sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <ul class="flex flex-wrap justify-center space-x-6">
+                <li><a href="#overview" class="hover:text-blue-200 transition-colors">概要</a></li>
+                <li><a href="#major-ice-ages" class="hover:text-blue-200 transition-colors">大氷河期</a></li>
+                <li><a href="#quaternary-cycles" class="hover:text-blue-200 transition-colors">第四紀サイクル</a></li>
+                <li><a href="#milankovitch" class="hover:text-blue-200 transition-colors">ミランコビッチ理論</a></li>
+                <li><a href="#comprehensive-view" class="hover:text-blue-200 transition-colors">包括的概観</a></li>
+                <li><a href="#comparison" class="hover:text-blue-200 transition-colors">比較分析</a></li>
+                <li><a href="#current" class="hover:text-blue-200 transition-colors">現在の状況</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 py-8">
+        <!-- 概要セクション -->
+        <section id="overview" class="mb-12">
+            <h2 class="text-3xl font-bold mb-6 text-blue-900">氷河期とは</h2>
+            <div class="card">
+                <p class="text-lg mb-6">
+                    氷河期とは、地球の気候が長期間にわたって寒冷化し、大陸に巨大な氷床が発達する時期のことです。
+                    地球の歴史において、氷河期は何度も繰り返されており、現在も第四紀氷河期の中にいると考えられています。
+                    このサイトでは、大氷河期から現在の氷期・間氷期サイクルまで、包括的なグラフと詳細なデータで氷河期の全容を明らかにします。
+                </p>
+                <div class="grid md:grid-cols-3 gap-6 mt-6">
+                    <div class="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-500">
+                        <h3 class="font-bold text-purple-900 mb-2">大氷河期</h3>
+                        <p class="text-sm">数百万年から数億年続く長期的な寒冷期。地球史上5回の大氷河期が確認されています。</p>
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
+                        <h3 class="font-bold text-blue-900 mb-2">氷期</h3>
+                        <p class="text-sm">大氷河期の中で約9万年続く寒冷期。大陸氷床が拡大し、海水面が約120m低下します。</p>
+                    </div>
+                    <div class="bg-orange-50 p-4 rounded-lg border-l-4 border-orange-500">
+                        <h3 class="font-bold text-orange-900 mb-2">間氷期</h3>
+                        <p class="text-sm">氷期の間の約1万年続く温暖期。現在は完新世間氷期の中にいます。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 大氷河期セクション -->
+        <section id="major-ice-ages" class="mb-12">
+            <h2 class="text-3xl font-bold mb-6 text-blue-900">地球史上の大氷河期</h2>
+            <div class="graph-container">
+                <div class="graph-title">大氷河期タイムライン（過去25億年間）</div>
+                <canvas id="major-ice-ages-canvas" class="large-canvas"></canvas>
+                <p class="text-sm text-gray-600 mt-4 text-center">
+                    ※ 横軸は対数スケール。各大氷河期の期間と現在までの時間的関係を示しています。
+                </p>
+            </div>
+            
+            <div class="card mt-6">
+                <h3 class="text-xl font-bold mb-4 text-blue-800">大氷河期の特徴</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead>
+                            <tr>
+                                <th>氷河期名</th>
+                                <th>時期</th>
+                                <th>継続期間</th>
+                                <th>主な特徴</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="font-semibold">ヒューロニアン氷河期</td>
+                                <td>24-21億年前</td>
+                                <td>3億年間</td>
+                                <td>地球史上最初の大氷河期。酸素増加が原因</td>
+                            </tr>
+                            <tr>
+                                <td class="font-semibold">クライオジェニアン氷河期</td>
+                                <td>8.5-6.35億年前</td>
+                                <td>2.15億年間</td>
+                                <td>「スノーボールアース」極端な氷河期</td>
+                            </tr>
+                            <tr>
+                                <td class="font-semibold">アンデス・サハラ氷河期</td>
+                                <td>4.6-4.3億年前</td>
+                                <td>3000万年間</td>
+                                <td>オルドビス紀末大量絶滅と関連</td>
+                            </tr>
+                            <tr>
+                                <td class="font-semibold">後期古生代氷河期</td>
+                                <td>3.6-2.6億年前</td>
+                                <td>1億年間</td>
+                                <td>ゴンドワナ大陸の南極移動が原因</td>
+                            </tr>
+                            <tr class="bg-blue-50">
+                                <td class="font-semibold">第四紀氷河期</td>
+                                <td>258万年前-現在</td>
+                                <td>258万年間（継続中）</td>
+                                <td>現在も継続中。氷期・間氷期サイクルが特徴</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- 第四紀氷期・間氷期サイクル -->
+        <section id="quaternary-cycles" class="mb-12">
+            <h2 class="text-3xl font-bold mb-6 text-blue-900">第四紀の氷期・間氷期サイクル</h2>
+            <div class="graph-container">
+                <div class="graph-title">過去80万年間の気温変化と氷期・間氷期サイクル</div>
+                <canvas id="quaternary-temp-canvas" class="large-canvas"></canvas>
+                <p class="text-sm text-gray-600 mt-4 text-center">
+                    青色：氷期（約9万年）、オレンジ色：間氷期（約1万年）。現在は完新世間氷期の中にいます。
+                </p>
+            </div>
+
+            <div class="card mt-6">
+                <h3 class="text-xl font-bold mb-4 text-blue-800">氷期・間氷期の周期的パターン</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-bold text-blue-700 mb-3">氷期の特徴</h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2 font-bold">●</span>
+                                継続期間：約9万年
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2 font-bold">●</span>
+                                気温：現在より4-7℃低下
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2 font-bold">●</span>
+                                海水面：約120m低下
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-600 mr-2 font-bold">●</span>
+                                CO2濃度：約180ppm
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-orange-700 mb-3">間氷期の特徴</h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <span class="text-orange-600 mr-2 font-bold">●</span>
+                                継続期間：約1万年
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-orange-600 mr-2 font-bold">●</span>
+                                気温：氷期より4-7℃上昇
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-orange-600 mr-2 font-bold">●</span>
+                                海水面：氷期より約120m上昇
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-orange-600 mr-2 font-bold">●</span>
+                                CO2濃度：約280ppm
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ミランコビッチ理論セクション -->
+        <section id="milankovitch" class="mb-12">
+            <h2 class="text-3xl font-bold mb-6 text-blue-900">ミランコビッチ理論</h2>
+            <div class="card mb-6">
+                <p class="text-lg mb-6">
+                    氷期・間氷期サイクルは、地球の軌道変動によって引き起こされます。
+                    セルビアの天文学者ミランコビッチが提唱した理論により、以下の3つの要因が複合的に作用しています：
+                </p>
+            </div>
+
+            <div class="graph-container">
+                <div class="graph-title">ミランコビッチサイクル（過去50万年間）</div>
+                <canvas id="milankovitch-canvas" class="large-canvas"></canvas>
+                <p class="text-sm text-gray-600 mt-4 text-center">
+                    3つの軌道要素の周期的変化。これらの組み合わせが氷期・間氷期サイクルを引き起こします。
+                </p>
+            </div>
+
+            <div class="cycle-cards">
+                <div class="cycle-card">
+                    <h4>歳差運動</h4>
+                    <div class="cycle-period">2.3万年</div>
+                    <p class="cycle-description">地球の自転軸の向きが変化する周期。季節のタイミングに影響を与えます。</p>
+                </div>
+                <div class="cycle-card">
+                    <h4>地軸傾斜</h4>
+                    <div class="cycle-period">4.1万年</div>
+                    <p class="cycle-description">地軸の傾きが21.5°〜24.5°の間で変化する周期。季節性の強さに影響します。</p>
+                </div>
+                <div class="cycle-card">
+                    <h4>離心率</h4>
+                    <div class="cycle-period">10万年</div>
+                    <p class="cycle-description">公転軌道の楕円度が変化する周期。年間日射量の変化に最も大きく影響します。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 包括的概観セクション -->
+        <section id="comprehensive-view" class="mb-12">
+            <h2 class="text-3xl font-bold mb-6 text-blue-900">氷河期の包括的概観</h2>
+            <div class="graph-container">
+                <div class="graph-title">大氷河期から第四紀サイクルまでの統合ビュー</div>
+                <canvas id="comprehensive-canvas" class="large-canvas"></canvas>
+                <p class="text-sm text-gray-600 mt-4 text-center">
+                    上部：地球史上の大氷河期、下部：第四紀氷河期内の詳細な氷期・間氷期サイクル
+                </p>
+            </div>
+
+            <div class="card mt-6">
+                <h3 class="text-xl font-bold mb-4 text-blue-800">時間スケールの理解</h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="text-center p-4 bg-purple-50 rounded-lg">
+                        <div class="text-3xl font-bold text-purple-600 mb-2">億年</div>
+                        <div class="text-sm text-gray-600">大氷河期のスケール</div>
+                        <div class="text-xs text-purple-500 mt-1">地質学的大変動</div>
+                    </div>
+                    <div class="text-center p-4 bg-blue-50 rounded-lg">
+                        <div class="text-3xl font-bold text-blue-600 mb-2">10万年</div>
+                        <div class="text-sm text-gray-600">氷期・間氷期サイクル</div>
+                        <div class="text-xs text-blue-500 mt-1">軌道要素の変化</div>
+                    </div>
+                    <div class="text-center p-4 bg-red-50 rounded-lg">
+                        <div class="text-3xl font-bold text-red-600 mb-2">100年</div>
+                        <div class="text-sm text-gray-600">現在の気候変動</div>
+                        <div class="text-xs text-red-500 mt-1">人為的影響</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 比較分析セクション -->
+        <section id="comparison" class="mb-12">
+            <h2 class="text-3xl font-bold mb-6 text-blue-900">氷期と間氷期の詳細比較</h2>
+            <div id="enhanced-comparison-chart" class="mb-6">
+                <!-- JavaScriptで動的に生成 -->
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card glacial-features">
+                    <h3 class="font-bold text-blue-900 mb-3">氷期の詳細特徴</h3>
+                    <ul>
+                        <li>北半球に厚さ3km以上の大陸氷床が発達</li>
+                        <li>海水面が約120m低下し、陸橋が形成</li>
+                        <li>平均気温が4〜7℃低下</li>
+                        <li>CO2濃度が約180ppmまで低下</li>
+                        <li>寒冷・乾燥気候が支配的</li>
+                        <li>森林が縮小し、草原・砂漠が拡大</li>
+                        <li>生物の大規模な移動と適応</li>
+                        <li>人類の進化と拡散に大きな影響</li>
+                    </ul>
+                </div>
+                <div class="feature-card interglacial-features">
+                    <h3 class="font-bold text-orange-900 mb-3">間氷期の詳細特徴</h3>
+                    <ul>
+                        <li>氷床の大幅な縮小・後退</li>
+                        <li>海水面の上昇と海峡・水道の形成</li>
+                        <li>平均気温の上昇と温暖化</li>
+                        <li>CO2濃度が約280ppmまで上昇</li>
+                        <li>温暖・湿潤気候の拡大</li>
+                        <li>森林の拡大と生物多様性の増加</li>
+                        <li>農業の発達と文明の発展</li>
+                        <li>現在の人類文明は間氷期に発達</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 現在の状況セクション -->
+        <section id="current" class="mb-12">
+            <h2 class="text-3xl font-bold mb-6 text-blue-900">現在の地球の状況</h2>
+            <div class="card">
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4 text-green-800">現在は間氷期（完新世）</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <span class="text-green-600 mr-2">●</span>
+                                約1万1700年前に最終氷期が終了
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-600 mr-2">●</span>
+                                現在の間氷期は「完新世」と呼ばれる
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-600 mr-2">●</span>
+                                自然状態では3〜5万年続くと予測
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-600 mr-2">●</span>
+                                人類文明はこの間氷期に発達
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-4 text-red-800">人為的気候変動の影響</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <span class="text-red-600 mr-2">●</span>
+                                20世紀後半から急速な温暖化
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-red-600 mr-2">●</span>
+                                CO2濃度が過去80万年で最高レベル
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-red-600 mr-2">●</span>
+                                自然サイクルの約10倍の速度で変化
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-red-600 mr-2">●</span>
+                                次の氷期の開始時期が不確実に
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="current-status">
+                    <h4 class="font-bold text-amber-900 mb-4 text-center text-xl">現在の地球の数値</h4>
+                    <div class="status-grid">
+                        <div class="status-item">
+                            <div class="status-value text-red-600">420</div>
+                            <div class="status-label">現在のCO2濃度 (ppm)</div>
+                            <div class="status-note">氷期の2.3倍</div>
+                        </div>
+                        <div class="status-item">
+                            <div class="status-value text-red-600">+1.1</div>
+                            <div class="status-label">産業革命前比気温上昇 (℃)</div>
+                            <div class="status-note">自然変化の10倍の速度</div>
+                        </div>
+                        <div class="status-item">
+                            <div class="status-value text-blue-600">50</div>
+                            <div class="status-label">間氷期予想継続期間 (千年)</div>
+                            <div class="status-note">人為的影響により不確実</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-6 p-4 bg-yellow-50 rounded-lg border-l-4 border-yellow-500">
+                    <h4 class="font-bold text-yellow-900 mb-2">重要なポイント</h4>
+                    <p class="text-yellow-800">
+                        現在の気候変動は自然の氷期・間氷期サイクルとは異なり、
+                        人間活動による温室効果ガスの排出が主な原因となっています。
+                        その変化速度は自然のサイクルの約10倍であり、地球システムに前例のない影響を与えています。
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- フッター -->
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 地球の氷河期 - 包括的教育ウェブサイト</p>
+            <p class="text-gray-400 mt-2">科学的データに基づく教育コンテンツ - 大氷河期から現在まで</p>
+            <p class="text-gray-500 mt-1 text-sm">データソース: NOAA, NASA, IPCC, 各種古気候研究</p>
+        </div>
+    </footer>
+
+    <!-- カスタムモーダル -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <pre id="modal-text" class="whitespace-pre-wrap"></pre>
+            <div id="ai-response-container" class="mt-4 pt-4 border-t border-gray-200">
+                <div id="ai-loader" class="loader"></div>
+                <pre id="ai-response" class="whitespace-pre-wrap text-sm text-gray-700"></pre>
+            </div>
+            <button id="expand-fact-button" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors shadow-md">
+                詳細を深掘り ✨
+            </button>
+        </div>
+    </div>
+
+    <!-- 外部JavaScriptファイルの読み込み -->
+    <script type="module" src="data/ice-age-data.js"></script>
+    <script type="module" src="js/enhanced-script.js"></script>
+</body>
+</html>
